@@ -17,6 +17,7 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 
 const teamQuestions = {
+    //Manager Questions
     Manager: [{
         type: "input",
         message: "What is the manager's name?",
@@ -39,7 +40,7 @@ const teamQuestions = {
     }
 
     ],
-
+//Engineer Questions
     Engineer: [{
         type: "input",
         message: "What is the engineer's name?",
@@ -62,7 +63,7 @@ const teamQuestions = {
     }
 
     ],
-
+// Intern Questions
     Intern: [{
         type: "input",
         message: "What is the intern's name?",
@@ -86,3 +87,62 @@ const teamQuestions = {
 
     ],
 }
+
+function start() {
+
+    inquirer.prompt(addNew).then((answer) => {
+        if (answer.addMember == "Yes") {
+            allowedNodeEnvironmentFlags();
+        } else {
+
+            fs.writeFileSync(outputPath, render(Team), "utf-8");
+            process.exit(0);
+    }
+
+})
+
+}
+
+
+
+const addNew = {
+    type: "List",
+    message: "Would you like to add another employee?",
+    name: "addMember",
+    choices: ["Yes","No"],
+}
+
+function addRole() {
+    inquirer.prompt([{
+        type: "list",
+        message: "Employees role?",
+        name: "employeeChoice",
+        choices: ["Manager", "Engineer", "Intern",]
+    }]).then((answer) => {
+        if (answer.employeeChoice === "Manager" && managerCounter < 1) {
+            managerCounter++
+            inquirer.prompt(teamMembers.Manager).then((results) => {
+                const manager= new Manager(results.managerName, results.managerId, results.managerEmail, results.officeNumber);
+                Team.push(manager);
+                start();
+            })
+        } else if (answer.employeeChoice === "Engineer") {
+            inquirer.prompt(teamMembers.Engineer).then((results) => {
+                const engineer = new Engineer(results.engineerName, results.engineerId, results.engineerEmail, results.engineerGithub);
+                Team.push(engineer);
+                start();
+            })
+        } else if (answer.employeeChoice === "Intern") {
+            inquirer.prompt(teamMembers.Intern).then((results) => {
+                const intern = new Intern(results.internName, results.internId, results.internEmail, results.internSchool);
+                Team.push(intern);
+                start();
+            })
+        } else {
+            start();
+        }
+    })
+
+
+}
+start()
