@@ -88,6 +88,7 @@ const teamQuestions = {
     ],
 }
 
+//Function to initialize app
 function start() {
 
     inquirer.prompt(addNew).then((answer) => {
@@ -104,7 +105,7 @@ function start() {
 }
 
 
-
+//To add a new member or not
 const addNew = {
     type: "List",
     message: "Would you like to add another employee?",
@@ -112,6 +113,7 @@ const addNew = {
     choices: ["Yes","No"],
 }
 
+//add new members role
 function addRole() {
     inquirer.prompt([{
         type: "list",
