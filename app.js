@@ -14,10 +14,10 @@ const Team = [];
 //File Path 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
+const render = require("./Develop/lib/render");
+var managerCounter = 0;
 
-
-const teamQuestions = {
-    //Manager Questions
+const teamMembers = {
     Manager: [{
         type: "input",
         message: "What is the manager's name?",
@@ -40,7 +40,8 @@ const teamQuestions = {
     }
 
     ],
-//Engineer Questions
+
+    
     Engineer: [{
         type: "input",
         message: "What is the engineer's name?",
@@ -63,7 +64,8 @@ const teamQuestions = {
     }
 
     ],
-// Intern Questions
+
+
     Intern: [{
         type: "input",
         message: "What is the intern's name?",
@@ -93,7 +95,7 @@ function start() {
 
     inquirer.prompt(addNew).then((answer) => {
         if (answer.addMember == "Yes") {
-            allowedNodeEnvironmentFlags();
+            addRole();
         } else {
 
             fs.writeFileSync(outputPath, render(Team), "utf-8");
@@ -110,7 +112,7 @@ const addNew = {
     type: "List",
     message: "Would you like to add another employee?",
     name: "addMember",
-    choices: ["Yes","No"],
+    choices: ["Yes", "No"],
 }
 
 //add new members role
