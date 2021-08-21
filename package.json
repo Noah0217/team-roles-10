@@ -1,7 +1,7 @@
 {
-  "name": "teamroles",
+  "name": "team",
   "version": "1.0.0",
-  "description": "generate teamroles",
+  "description": "generate team",
   "main": "app.js",
   "scripts": {
     "test": "jest"
