@@ -1,1 +1,18 @@
-/*
+.jumbotron {
+    background-color: #504949;
+    font-family:monospace;
+    color: rgb(56, 53, 53);
+}
+
+.card-header {
+    background-color: #000000a6;
+    font-family: monospace;
+}
+
+.card-body {
+    background-color: transparent;
+}
+
+.list-group-item {
+    background-color: #47474598;
+}
