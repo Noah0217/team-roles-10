@@ -135,7 +135,7 @@ function addRole() {
         if (answer.employeeChoice === "Manager" && managerCounter < 1) {
             managerCounter++
             inquirer.prompt(teamMembers.Manager).then((results) => {
-                const manager= new Manager(results.managerName, results.managerId, results.managerEmail, results.officeNumber);
+                const manager = new Manager(results.managerName, results.managerId, results.managerEmail, results.officeNumber);
                 Team.push(manager);
                 start();
             })
