@@ -1,5 +1,5 @@
 //Roles/Classes
-const Employee = require("./Develop/lib/employee");
+//const Employee = require("./Develop/lib/employee");
 const Engineer = require("./Develop/lib/engineer");
 const Intern = require("./Develop/lib/intern");
 const Manager = require("./Develop/lib/manager");
@@ -10,15 +10,14 @@ const path = require("path");
 const fs = require("fs");
 const Team = [];
 
-//File Path 
+//File Path to output folder then team.html page
 const OUTPUT_DIR = path.resolve(__dirname, "Develop/output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 const render = require("./Develop/lib/htmlRenderer");
 var managerCounter = 0;
 
 const teamMembers = {
-    //Manager Questions
-
+    
     Manager: [{
         type: "input",
         message: "What is the manager's name?",
@@ -43,7 +42,7 @@ const teamMembers = {
     ],
 
 
-// Engineer Questions
+ 
     Engineer: [{
         type: "input",
         message: "What is the engineer's name?",
@@ -68,7 +67,7 @@ const teamMembers = {
     ],
 
 
-//Intern Questions
+
     Intern: [{
         type: "input",
         message: "What is the intern's name?",
@@ -114,7 +113,7 @@ console.log(Team)
 
 
 
-//To add a new member or not
+//To add a new member or not if typed "No" final HTML page will render at team.html
 const addNew = {
     type: "List",
     message: "Would you like to add another employee?",
@@ -137,10 +136,10 @@ function addRole() {
             inquirer.prompt(teamMembers.Manager).then((results) => {
                 const manager = new Manager(results.managerName, results.managerId, results.managerEmail, results.officeNumber);
                 Team.push(manager);
-                console.log("Manager")
+                //console.log("Manager")
                 start();
             })
-
+                
         } else if (answer.employeeChoice === "Engineer") {
             inquirer.prompt(teamMembers.Engineer).then((results) => {
                 const engineer = new Engineer(results.engineerName, results.engineerId, results.engineerEmail, results.engineerGithub);
@@ -156,7 +155,9 @@ function addRole() {
             })
         } else {
             start();
+
         }
+
     })
 
 
