@@ -17,6 +17,7 @@ const render = require("./Develop/lib/htmlRenderer");
 var managerCounter = 0;
 
 const teamMembers = {
+    //Manager Questions
     Manager: [{
         type: "input",
         message: "What is the manager's name?",
@@ -40,7 +41,7 @@ const teamMembers = {
 
     ],
 
-
+// Engineer Questions
     Engineer: [{
         type: "input",
         message: "What is the engineer's name?",
@@ -64,7 +65,7 @@ const teamMembers = {
 
     ],
 
-
+//Intern Questions
     Intern: [{
         type: "input",
         message: "What is the intern's name?",
