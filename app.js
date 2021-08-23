@@ -11,13 +11,14 @@ const fs = require("fs");
 const Team = [];
 
 //File Path 
-const OUTPUT_DIR = path.resolve(__dirname, "output");
+const OUTPUT_DIR = path.resolve(__dirname, "Develop/output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 const render = require("./Develop/lib/htmlRenderer");
 var managerCounter = 0;
 
 const teamMembers = {
     //Manager Questions
+
     Manager: [{
         type: "input",
         message: "What is the manager's name?",
@@ -40,6 +41,7 @@ const teamMembers = {
     }
 
     ],
+
 
 // Engineer Questions
     Engineer: [{
@@ -65,6 +67,7 @@ const teamMembers = {
 
     ],
 
+
 //Intern Questions
     Intern: [{
         type: "input",
@@ -88,7 +91,9 @@ const teamMembers = {
     }
 
     ],
+
 }
+
 
 //Function to initialize app
 function start() {
@@ -97,7 +102,8 @@ function start() {
         if (answer.addMember == "Yes") {
             addRole();
         } else {
-
+console.log("Team") 
+console.log(Team)
             fs.writeFileSync(outputPath, render(Team), "utf-8");
             process.exit(0);
     }
@@ -105,6 +111,7 @@ function start() {
 })
 
 }
+
 
 
 //To add a new member or not
@@ -115,6 +122,7 @@ const addNew = {
     choices: ["Yes", "No"],
 }
 
+
 //add new members role
 function addRole() {
     inquirer.prompt([{
@@ -122,6 +130,7 @@ function addRole() {
         message: "Employees role?",
         name: "employeeChoice",
         choices: ["Manager", "Engineer", "Intern",]
+
     }]).then((answer) => {
         if (answer.employeeChoice === "Manager" && managerCounter < 1) {
             managerCounter++
@@ -130,12 +139,14 @@ function addRole() {
                 Team.push(manager);
                 start();
             })
+
         } else if (answer.employeeChoice === "Engineer") {
             inquirer.prompt(teamMembers.Engineer).then((results) => {
                 const engineer = new Engineer(results.engineerName, results.engineerId, results.engineerEmail, results.engineerGithub);
                 Team.push(engineer);
                 start();
             })
+
         } else if (answer.employeeChoice === "Intern") {
             inquirer.prompt(teamMembers.Intern).then((results) => {
                 const intern = new Intern(results.internName, results.internId, results.internEmail, results.internSchool);
@@ -149,4 +160,7 @@ function addRole() {
 
 
 }
+
+
+
 start()
