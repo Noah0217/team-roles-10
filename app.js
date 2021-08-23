@@ -137,6 +137,7 @@ function addRole() {
             inquirer.prompt(teamMembers.Manager).then((results) => {
                 const manager = new Manager(results.managerName, results.managerId, results.managerEmail, results.officeNumber);
                 Team.push(manager);
+                console.log("Manager")
                 start();
             })
 
