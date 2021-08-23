@@ -1,7 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 
-const templatesDir = path.resolve(__dirname, "../templates");
+const templatesDir = path.resolve(__dirname, "../template");
 
 const render = employees => {
   const html = [];
@@ -10,20 +10,23 @@ const render = employees => {
     .filter(employee => employee.getRole() === "Manager")
     .map(manager => renderManager(manager))
   );
+
   html.push(employees
     .filter(employee => employee.getRole() === "Engineer")
     .map(engineer => renderEngineer(engineer))
   );
+
   html.push(employees
     .filter(employee => employee.getRole() === "Intern")
     .map(intern => renderIntern(intern))
   );
+
 //render error 1
   return renderMain(html.join(""));
 
 };
 
-//Manager render
+//Manager data render
 const renderManager = manager => {
   let template = fs.readFileSync(path.resolve(templatesDir, "manager.html"), "utf8");
   template = replacePlaceholders(template, "name", manager.getName());
@@ -34,7 +37,7 @@ const renderManager = manager => {
   return template;
 };
 
-//Engineer render
+//Engineer data render
 const renderEngineer = engineer => {
   let template = fs.readFileSync(path.resolve(templatesDir, "engineer.html"), "utf8");
   template = replacePlaceholders(template, "name", engineer.getName());
@@ -45,7 +48,7 @@ const renderEngineer = engineer => {
   return template;
 };
 
-//Intern render
+//Intern data render
 const renderIntern = intern => {
   let template = fs.readFileSync(path.resolve(templatesDir, "intern.html"), "utf8");
   template = replacePlaceholders(template, "name", intern.getName());
