@@ -12,4 +12,4 @@
 - To run app use node app.js in terminal.
 
 <h2>Preview<h2>
-  <img src="https://raw.githubusercontent.com/Noah0217/weather-dashboard-6/main/Assets/images/new-weather-dashboard-image.png" width="1175" height="600"/>
+  <img src="https://raw.githubusercontent.com/Noah0217/team-roles-10/main/Assets/images/week%2010%20challenge%20complete%20image.png" width="1600" height="450"/>
