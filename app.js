@@ -1,5 +1,4 @@
 //Roles/Classes
-//const Employee = require("./Develop/lib/employee");
 const Engineer = require("./Develop/lib/engineer");
 const Intern = require("./Develop/lib/intern");
 const Manager = require("./Develop/lib/manager");
@@ -116,7 +115,7 @@ console.log(Team)
 //To add a new member or not if typed "No" final HTML page will render at team.html
 const addNew = {
     type: "List",
-    message: "Would you like to add another employee?",
+    message: "Would you like to add another employee? (Yes) (No)",
     name: "addMember",
     choices: ["Yes", "No"],
 }
