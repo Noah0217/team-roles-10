@@ -9,7 +9,8 @@
 - Node.Js
 
   <h3 align="left">Installation</h3>
-- To run app use node app.js in terminal.
+- Run `node app.js` in terminal
+- Respond with `Yes` or `No` in terminal to get started.
 
 <h2>Preview<h2>
   <img src="https://raw.githubusercontent.com/Noah0217/team-roles-10/main/Assets/images/week%2010%20challenge%20complete%20image.png" width="1600" height="450"/>
