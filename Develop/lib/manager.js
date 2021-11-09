@@ -3,8 +3,10 @@ class Manager extends Employee {
     constructor (name, id, email, officeNumber) {
         super(name, id, email)
         this.officeNumber = officeNumber
+        this.email = email
     }
     getOfficeNumber() {return this.officeNumber}
-    GetRole() {return "Manager"}
+    getEmail() {return this.email}
+    getRole() {return "Manager"}
 }
 module.exports = Manager
