@@ -14,4 +14,6 @@
 - Select `Manager` `Engineer` or `Intern` to enter info for roles.
 
 <h2>Preview<h2>
-  <img src="https://raw.githubusercontent.com/Noah0217/team-roles-10/main/Assets/images/week%2010%20challenge%20complete%20image.png" width="1600" height="450"/>
+ 
+https://user-images.githubusercontent.com/84366215/140864054-62d17ef5-5e87-421a-a9d6-5c0f42e2aa48.mp4
+
