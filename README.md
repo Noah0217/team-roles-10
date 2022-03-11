@@ -1,6 +1,6 @@
 # Team Roles Generator
 
-<h2>Description<br><h4>A node terminal based application that allows the user to fully customize a create a team to there liking assign roles and give details about each role.
+<h2>Description<br><h4>A node terminal based application that allows the user to fully customize a create a team to there liking, assign roles and give details about each role.
   <h3 align="left">💻Languages and Tools🛠️</h3>
 
 - VS Code
