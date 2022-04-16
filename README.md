@@ -6,7 +6,7 @@
 - VS Code
 - Git Bash Terminal
 - JavaScript
-- Node.Js
+- Node. Js
 
   <h3 align="left">Installation</h3>
 - Run `node app.js` in terminal
