@@ -9,7 +9,7 @@
 - Node. Js
 
   <h3 align="left">Installation</h3>
-- Run `node app.js` in terminal
+- Run `node app.Js` in terminal
 - Respond with `Yes` or `No` in terminal to get started.
 - Select `Manager` `Engineer` or `Intern` to enter info for roles.
 
