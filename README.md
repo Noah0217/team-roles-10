@@ -1,3 +1,5 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 # Team Roles Generator
 
 <h2>Description<br><h4>A terminal based application that allows the user to fully customize a create a team to there liking, assign roles and give details about each role.
